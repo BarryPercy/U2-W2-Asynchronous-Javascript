@@ -15,7 +15,7 @@ const getfloyd = () => {
 fetch('https://striveschool-api.herokuapp.com/api/deezer/search?q=pink+floyd', options)
 	.then(response => response.json())
     .then(response => renderAlbum(response.data, floyd))
-	.catch(err => console.error(err));
+    .catch(err => console.error(err));
 }
 const getDaft = () => { 
 fetch('https://striveschool-api.herokuapp.com/api/deezer/search?q=daft-punk', options)
@@ -41,7 +41,6 @@ const renderAlbum = (fetchedAlbum, location)=>{
     album.innerHTML+="</ol></div><hr>"
     location.appendChild(album);
 }
-
 function countUniqueAlbums(){
     let unique_elements = []
     for (let i = 0; i < albumList.length; i++) {
@@ -49,6 +48,7 @@ function countUniqueAlbums(){
         unique_elements.push(albumList[i])
     }
 }
+
 console.log(unique_elements.length);
 }
 const button = document.getElementById("modal-button");
